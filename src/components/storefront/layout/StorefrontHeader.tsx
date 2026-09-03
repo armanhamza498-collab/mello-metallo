@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Search, ShoppingBag, Heart, User, ChevronDown, Menu, X, Globe
+  Search, ShoppingBag, Heart, User, ChevronDown, Menu, X, Globe, ArrowRight
 } from "lucide-react";
 import { useCartStore, useCurrencyStore, useAuthStore } from "@/store";
 import { CURRENCY_FLAGS } from "@/lib/currency/currency";
@@ -189,7 +189,7 @@ const MEGA_MENU = {
   },
 };
 
-const NAV_ITEMS = ["Collections", "Categories"];
+const NAV_ITEMS = ["Brass", "Copper", "Kitchen", "Drinkware", "Home", "Gifting", "Collections"];
 
 const ANNOUNCEMENTS = [
   "Handcrafted in India · Delivered Worldwide",
@@ -288,7 +288,15 @@ export default function StorefrontHeader() {
           </Link>
 
           {/* CENTER — Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1" ref={menuRef}>
+          <nav className="hidden lg:flex items-center gap-0.5" ref={menuRef}>
+            {/* Direct shop link */}
+            <Link
+              href="/shop"
+              className="px-3 py-2 text-xs font-sans font-medium tracking-widest uppercase transition-colors duration-200 text-charcoal hover:text-brass"
+            >
+              Shop All
+            </Link>
+            <span className="w-px h-4 bg-sand mx-1" />
             {NAV_ITEMS.map((item) => (
               <div
                 key={item}
@@ -297,18 +305,25 @@ export default function StorefrontHeader() {
                 className="relative"
               >
                 <button
-                  className={`px-3 py-2 text-xs font-sans font-medium tracking-widest uppercase transition-colors duration-200 flex items-center gap-1 ${
+                  className={`px-2.5 py-2 text-xs font-sans font-medium tracking-widest uppercase transition-colors duration-200 flex items-center gap-1 ${
                     activeMenu === item ? "text-brass" : "text-charcoal hover:text-brass"
                   }`}
                 >
                   {item}
                   <ChevronDown
-                    size={11}
+                    size={10}
                     className={`transition-transform duration-200 ${activeMenu === item ? "rotate-180" : ""}`}
                   />
                 </button>
               </div>
             ))}
+            <span className="w-px h-4 bg-sand mx-1" />
+            <Link
+              href="/craftsmanship"
+              className="px-3 py-2 text-xs font-sans font-medium tracking-widest uppercase transition-colors duration-200 text-charcoal hover:text-brass"
+            >
+              Our Story
+            </Link>
           </nav>
 
           {/* RIGHT — Icons */}
@@ -532,17 +547,42 @@ export default function StorefrontHeader() {
                     <X size={20} strokeWidth={1.5} />
                   </button>
                 </div>
-                <nav className="space-y-1">
+                <nav className="space-y-0">
+                  <Link
+                    href="/shop"
+                    className="flex items-center justify-between py-3 border-b border-cream text-sm font-sans font-semibold tracking-widest uppercase text-brass hover:text-brass-dark transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Shop All
+                    <ArrowRight size={14} />
+                  </Link>
                   {NAV_ITEMS.map((item) => (
                     <Link
                       key={item}
                       href={`/shop?category=${item.toLowerCase()}`}
-                      className="block py-3 border-b border-cream text-sm font-sans font-medium tracking-widest uppercase text-charcoal hover:text-brass transition-colors"
+                      className="flex items-center justify-between py-3 border-b border-cream text-sm font-sans font-medium tracking-widest uppercase text-charcoal hover:text-brass transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item}
+                      <ChevronDown size={14} className="-rotate-90" />
                     </Link>
                   ))}
+                  <Link
+                    href="/craftsmanship"
+                    className="flex items-center justify-between py-3 border-b border-cream text-sm font-sans font-medium tracking-widest uppercase text-charcoal hover:text-brass transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Our Story
+                    <ChevronDown size={14} className="-rotate-90" />
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="flex items-center justify-between py-3 border-b border-cream text-sm font-sans font-medium tracking-widest uppercase text-charcoal hover:text-brass transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    About
+                    <ChevronDown size={14} className="-rotate-90" />
+                  </Link>
                 </nav>
                 <div className="mt-8 space-y-4">
                   <Link href="/account" className="flex items-center gap-3 text-sm font-sans text-charcoal" onClick={() => setMobileMenuOpen(false)}>
