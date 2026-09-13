@@ -19,6 +19,16 @@
   --copper-warm: #A0522D;
   --muted: #9B9590;
 
+  /* Rose-Pink Accent Palette (product flow theme) */
+  --rose: #E8B4B8;
+  --rose-dark: #C4778B;
+  --rose-deeper: #A85570;
+  --blush: #F5D6D9;
+  --blush-light: #FDF0F1;
+  --rose-muted: #D4939A;
+  --white-pure: #FFFFFF;
+  --off-white: #FAF8F6;
+
   /* Semantic */
   --bg-primary: var(--ivory);
   --bg-secondary: var(--cream);
@@ -635,4 +645,80 @@
 .bg-brass\/10 { background-color: rgba(139, 115, 85, 0.1); }
 .text-brass-light { color: var(--brass-light); }
 .text-brass-lighter { color: var(--brass-lighter); }
+
+/* ─────────────────────────────────────────────────────────────
+   ROSE / BLUSH THEME UTILITIES (Product Flow)
+───────────────────────────────────────────────────────────── */
+.text-rose { color: var(--rose-dark); }
+.text-rose-dark { color: var(--rose-deeper); }
+.bg-rose { background-color: var(--rose); }
+.bg-blush { background-color: var(--blush); }
+.bg-blush-light { background-color: var(--blush-light); }
+.border-rose { border-color: var(--rose); }
+.border-blush { border-color: var(--blush); }
+
+/* Rose button */
+.btn-rose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--rose-dark);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.875rem 2.5rem;
+  border-radius: 0;
+  transition: all var(--transition-base);
+}
+.btn-rose:hover { background-color: var(--rose-deeper); }
+
+/* Blush outline button */
+.btn-blush-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--rose-dark);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: 1.5px solid var(--rose);
+  border-radius: 0;
+  transition: all var(--transition-base);
+}
+.btn-blush-outline:hover {
+  background-color: var(--blush);
+  border-color: var(--rose-dark);
+}
+
+/* Products nav flyout panel */
+.products-flyout-category {
+  position: relative;
+  padding: 0.625rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: all 200ms ease;
+  white-space: nowrap;
+}
+.products-flyout-category:hover,
+.products-flyout-category.active {
+  color: var(--rose-dark);
+  border-left-color: var(--rose);
+  background: var(--blush-light);
+}
+
 

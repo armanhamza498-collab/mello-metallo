@@ -13,6 +13,7 @@ export async function GET(req: NextRequest) {
     const limit = parseInt(searchParams.get("limit") || "24");
     const sort = searchParams.get("sort") || "featured";
     const category = searchParams.get("category");
+    const subcategory = searchParams.get("subcategory");
     const collection = searchParams.get("collection");
     const material = searchParams.get("material");
     const minPrice = searchParams.get("minPrice");
@@ -47,6 +48,26 @@ export async function GET(req: NextRequest) {
         ];
       }
     }
+
+    // Subcategory — resolve slug → ObjectId, filter by product.subcategory field
+    if (subcategory) {
+      const subSlug = subcategory.toLowerCase().replace(/ /g, "-");
+      const subDoc = await Category.findOne({
+        $or: [
+          { slug: subSlug },
+          { name: { $regex: new RegExp(subSlug.replace(/-/g, " "), "i") } },
+        ],
+      }).lean<{ _id: unknown }>();
+
+      if (subDoc) {
+        filter.subcategory = subDoc._id;
+      } else {
+        filter.$or = [
+          { tags: { $regex: new RegExp(subSlug, "i") } },
+        ];
+      }
+    }
+
 
     // Collection — resolve slug → Collection ObjectId, Category ObjectId, or Tag/Material
     if (collection) {
