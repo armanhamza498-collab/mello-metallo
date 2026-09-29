@@ -209,7 +209,7 @@ export default function StorefrontHeader() {
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--rose-dark)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--espresso)")}
             >
-              Laiton <span style={{ color: "var(--rose-dark)" }}>&</span> Co
+              Mello <span style={{ color: "var(--rose-dark)" }}>Metallo</span>
             </span>
           </Link>
 
@@ -494,7 +494,7 @@ export default function StorefrontHeader() {
                       onClick={() => closeFlyout()}
                     >
                       <Link
-                        href={`/products/${cat.slug}`}
+                        href={`/categories/${cat.slug}`}
                         className="flex-1 text-xs font-sans font-medium tracking-wide uppercase"
                         style={{ color: "inherit" }}
                       >
@@ -550,17 +550,11 @@ export default function StorefrontHeader() {
                           {(subcategoryMap[activeCategory] || []).map((sub) => (
                             <Link
                               key={sub._id}
-                              href={`/products/${activeCategory}/${sub.slug}`}
-                              className="group py-2 text-sm font-sans flex items-center gap-1.5 transition-colors"
-                              style={{ color: "var(--charcoal)" }}
-                              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--rose-dark)")}
-                              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--charcoal)")}
+                              href={`/categories/${activeCategory}/${sub.slug}`}
+                              className="group py-2 text-sm font-sans flex items-center gap-1.5 transition-colors text-charcoal hover:text-brass"
                               onClick={closeFlyout}
                             >
-                              <span
-                                className="w-1 h-1 rounded-full flex-shrink-0 transition-colors"
-                                style={{ backgroundColor: "var(--rose)" }}
-                              />
+                              <span className="w-1.5 h-1.5 rounded-full bg-brass/60 group-hover:bg-brass flex-shrink-0 transition-colors" />
                               {sub.name}
                             </Link>
                           ))}
@@ -594,7 +588,7 @@ export default function StorefrontHeader() {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
                   <span className="font-serif text-lg tracking-widest uppercase" style={{ color: "var(--espresso)" }}>
-                    Laiton <span style={{ color: "var(--rose-dark)" }}>&</span> Co
+                    Mello <span style={{ color: "var(--rose-dark)" }}>Metallo</span>
                   </span>
                   <button
                     onClick={() => setMobileMenuOpen(false)}
@@ -686,21 +680,17 @@ export default function StorefrontHeader() {
                                       {(subcategoryMap[cat.slug] || []).map((sub) => (
                                         <Link
                                           key={sub._id}
-                                          href={`/products/${cat.slug}/${sub.slug}`}
-                                          className="flex items-center gap-1.5 py-1.5 text-xs font-sans transition-colors"
-                                          style={{ color: "var(--charcoal)" }}
+                                          href={`/categories/${cat.slug}/${sub.slug}`}
+                                          className="flex items-center gap-2 py-1.5 text-xs font-sans text-charcoal hover:text-brass transition-colors"
                                           onClick={() => setMobileMenuOpen(false)}
-                                          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--rose-dark)")}
-                                          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--charcoal)")}
                                         >
-                                          <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "var(--rose)" }} />
+                                          <span className="w-1.5 h-1.5 rounded-full bg-brass/60" />
                                           {sub.name}
                                         </Link>
                                       ))}
                                       <Link
-                                        href={`/products/${cat.slug}`}
-                                        className="flex items-center gap-1 py-2 text-xs font-sans font-medium transition-colors"
-                                        style={{ color: "var(--rose-dark)" }}
+                                        href={`/categories/${cat.slug}`}
+                                        className="flex items-center gap-1 py-2 text-xs font-sans font-medium text-brass hover:underline transition-colors"
                                         onClick={() => setMobileMenuOpen(false)}
                                       >
                                         View all in {cat.name} →

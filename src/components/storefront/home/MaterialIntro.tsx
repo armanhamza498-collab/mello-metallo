@@ -23,7 +23,7 @@ const MATERIALS = [
     label: "Craft",
     tagline: "Made with attention to detail and lasting quality.",
     description:
-      "Every LAITON & CO object is shaped by skilled artisans using techniques passed down through generations. The hand behind the hammer leaves a mark that machines cannot replicate.",
+      "Every Mello Metallo object is shaped by skilled artisans using techniques passed down through generations. The hand behind the hammer leaves a mark that machines cannot replicate.",
     image: BRAND_IMAGES.artisanWorkshop,
   },
 ];
@@ -56,7 +56,7 @@ export default function MaterialIntro() {
             Brass, Reimagined.
           </h2>
           <p className="text-base font-sans text-muted max-w-xl mx-auto">
-            LAITON & CO creates contemporary objects using the most enduring materials known to Indian craft — brass and copper.
+            Mello Metallo creates contemporary objects using the most enduring materials known to Indian craft — brass and copper.
           </p>
         </motion.div>
 
@@ -102,7 +102,7 @@ export default function MaterialIntro() {
           <blockquote className="font-serif text-2xl md:text-3xl text-espresso font-light italic max-w-2xl mx-auto">
             "Material with memory. Objects that gather character with time."
           </blockquote>
-          <p className="label-subtle mt-4">— LAITON & CO</p>
+          <p className="label-subtle mt-4">— Mello Metallo</p>
         </motion.div>
       </div>
     </section>

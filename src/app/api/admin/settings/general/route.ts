@@ -3,8 +3,8 @@ import { connectDB } from "@/lib/db/connect";
 import { StoreSetting } from "@/lib/models/Settings";
 
 const DEFAULTS = {
-  storeName: "LAITON & CO",
-  supportEmail: "concierge@laitonco.com",
+  storeName: "Mello Metallo",
+  supportEmail: "hello@mellometallo.com",
   supportPhone: "+91 98765 43210",
   address: "42 Artisan Quarter, Jaipur, Rajasthan 302001, India",
   currency: "INR",

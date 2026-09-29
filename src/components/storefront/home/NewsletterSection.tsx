@@ -48,7 +48,7 @@ export default function NewsletterSection() {
             Objects worth keeping.
           </h2>
           <p className="font-sans text-ivory/60 text-base leading-relaxed mb-10 max-w-md mx-auto">
-            Join the LAITON & CO journal for new collections, craftsmanship stories, care guides and private offers.
+            Join the Mello Metallo journal for new collections, craftsmanship stories, care guides and private offers.
           </p>
 
           {submitted ? (
@@ -61,7 +61,7 @@ export default function NewsletterSection() {
                 <Check size={16} className="text-ivory" />
               </div>
               <p className="font-sans text-ivory font-medium">
-                You&apos;re on the list. Welcome to LAITON & CO.
+                You&apos;re on the list. Welcome to Mello Metallo.
               </p>
             </motion.div>
           ) : (

@@ -173,7 +173,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
         </div>
         {!sidebarCollapsed && (
           <div>
-            <p className="font-serif text-sm tracking-widest uppercase font-light" style={{ color: "var(--admin-text)" }}>Laiton & Co</p>
+            <p className="font-serif text-sm tracking-widest uppercase font-light" style={{ color: "var(--admin-text)" }}>Mello Metallo</p>
             <p className="text-[9px] font-sans tracking-wider uppercase" style={{ color: "var(--admin-text-muted)" }}>Admin Panel</p>
           </div>
         )}

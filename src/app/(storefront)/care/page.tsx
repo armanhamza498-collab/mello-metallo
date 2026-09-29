@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Brass & Copper Care Guide — LAITON & CO",
+  title: "Brass & Copper Care Guide — Mello Metallo",
   description: "Learn how to clean, polish, and preserve the natural patina of your brass cookware, tumblers, and home hardware.",
 };
 

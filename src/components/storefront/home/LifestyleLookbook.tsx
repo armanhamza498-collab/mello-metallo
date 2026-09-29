@@ -27,7 +27,7 @@ export default function LifestyleLookbook() {
           className="text-center mb-12"
         >
           <p className="label-uppercase mb-4">Lookbook</p>
-          <h2 className="font-serif font-light text-espresso">Laiton in the Home</h2>
+          <h2 className="font-serif font-light text-espresso">Mello Metallo in the Home</h2>
           <p className="text-sm font-sans text-muted mt-3">
             Brass and copper — at home in every room.
           </p>

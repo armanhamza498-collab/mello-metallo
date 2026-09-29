@@ -7,8 +7,8 @@ import ScrollToTop from "@/components/storefront/layout/ScrollToTop";
 
 export const metadata: Metadata = {
   title: {
-    default: "LAITON & CO — Brass & Copper Objects for the Modern Home",
-    template: "%s | LAITON & CO",
+    default: "Mello Metallo — Brass & Copper Objects for the Modern Home",
+    template: "%s | Mello Metallo",
   },
 };
 

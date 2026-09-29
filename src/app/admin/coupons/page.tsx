@@ -170,7 +170,7 @@ export default function AdminCouponsPage() {
                 <input
                   type="text"
                   required
-                  placeholder="e.g. LAITON10"
+                  placeholder="e.g. MELLO10"
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
                   className="w-full px-3 py-2 bg-[--admin-surface-2] border border-[--admin-border] rounded-lg text-xs font-mono font-bold uppercase text-[--admin-text] outline-none"

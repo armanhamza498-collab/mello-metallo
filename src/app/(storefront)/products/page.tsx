@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ChevronRight, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shop by Category — LAITON & CO",
+  title: "Shop by Category — Mello Metallo",
   description:
     "Explore our full range of handcrafted brass and copper products — from cabinet hardware to cookware, drinkware, home decor and curated gifts.",
 };

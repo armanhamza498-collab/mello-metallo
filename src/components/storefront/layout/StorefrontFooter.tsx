@@ -83,7 +83,7 @@ export default function StorefrontFooter() {
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link href="/" className="block mb-6">
               <span className="font-serif text-2xl tracking-[0.15em] text-ivory uppercase font-light">
-                Laiton <span className="text-brass-light">&</span> Co
+                Mello <span style={{ color: "var(--rose-dark)" }}>Metallo</span>
               </span>
             </Link>
             <p className="text-sm font-sans text-ivory/60 leading-relaxed mb-6 max-w-[220px]">
@@ -135,7 +135,7 @@ export default function StorefrontFooter() {
       {/* Bottom Bar */}
       <div className="container-site py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-xs font-sans text-ivory/40 tracking-wide">
-          © {new Date().getFullYear()} LAITON & CO. All rights reserved. Crafted in India.
+          © {new Date().getFullYear()} Mello Metallo. All rights reserved. Crafted in India.
         </p>
         {/* Payment Icons */}
         <div className="flex items-center gap-2">

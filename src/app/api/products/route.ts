@@ -72,15 +72,17 @@ export async function GET(req: NextRequest) {
     // Collection — resolve slug → Collection ObjectId, Category ObjectId, or Tag/Material
     if (collection) {
       const colSlug = collection.toLowerCase().replace(/ /g, "-");
-      const colDoc = await Collection.findOne({
+      const colDocs = await Collection.find({
         $or: [
           { slug: colSlug },
+          { slug: `${colSlug}-collection` },
+          { slug: colSlug.replace(/-collection$/, "") },
           { name: { $regex: new RegExp(colSlug.replace(/-/g, " "), "i") } },
         ],
-      }).lean<{ _id: unknown }>();
+      }).select("_id").lean<{ _id: unknown }[]>();
 
-      if (colDoc) {
-        filter.collections = colDoc._id;
+      if (colDocs.length > 0) {
+        filter.collections = { $in: colDocs.map((c) => c._id) };
       } else {
         // Check if collection matches a Category doc
         const catDoc = await Category.findOne({

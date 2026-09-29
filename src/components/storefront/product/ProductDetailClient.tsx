@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Heart, ShoppingBag, Star, Minus, Plus, ChevronDown, ZoomIn, Shield, Truck, RefreshCw, Check, Loader2, AlertCircle } from "lucide-react";
 import { useCartStore, useWishlistStore, useCurrencyStore } from "@/store";
 
-const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1585586723682-b4df7c864aab?w=800&q=80";
+const FALLBACK_IMAGE = "/images/copper_drinkware_1787586869011.png";
 
 interface ImageItem {
   url: string;

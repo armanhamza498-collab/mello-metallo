@@ -43,46 +43,71 @@ interface ActiveFilter {
 }
 
 function FilterSidebar({ activeFilters, onToggle }: { activeFilters: ActiveFilter[]; onToggle: (type: string, value: string) => void }) {
-  const [openSections, setOpenSections] = useState(["material", "finish"]);
+  const [openSections, setOpenSections] = useState(["material", "finish", "availability"]);
 
   const toggleSection = (key: string) => {
     setOpenSections((prev) => prev.includes(key) ? prev.filter((s) => s !== key) : [...prev, key]);
   };
 
   return (
-    <aside className="w-64 flex-shrink-0">
-      <h2 className="font-serif text-xl text-espresso mb-6">Filters</h2>
+    <aside
+      className="w-64 flex-shrink-0 p-5 border shadow-sm self-start"
+      style={{
+        backgroundColor: "#FAF7F2",
+        borderColor: "#D4CFC5",
+      }}
+    >
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#D4CFC5]">
+        <h2 className="font-serif text-xl text-espresso tracking-tight">Refine Selection</h2>
+        {activeFilters.length > 0 && (
+          <span className="text-[10px] font-sans font-semibold uppercase tracking-wider text-[#8B7355] bg-[#EDE8DF] px-2 py-0.5">
+            {activeFilters.length} active
+          </span>
+        )}
+      </div>
       {Object.entries(FILTERS).map(([key, options]) => (
-        <div key={key} className="border-b border-sand last:border-0 mb-1">
+        <div key={key} className="border-b border-[#D4CFC5] last:border-0 py-1">
           <button
             onClick={() => toggleSection(key)}
-            className="w-full flex items-center justify-between py-3 text-left"
+            className="w-full flex items-center justify-between py-2.5 text-left group"
           >
-            <span className="font-sans text-xs font-semibold tracking-widest uppercase text-charcoal capitalize">
+            <span className="font-sans text-[11px] font-semibold tracking-widest uppercase text-charcoal group-hover:text-brass transition-colors">
               {key.replace(/([A-Z])/g, " $1")}
             </span>
-            <ChevronDown size={14} className={`text-muted transition-transform ${openSections.includes(key) ? "rotate-180" : ""}`} />
+            <ChevronDown size={14} className={`text-muted transition-transform duration-200 ${openSections.includes(key) ? "rotate-180" : ""}`} />
           </button>
           <AnimatePresence>
             {openSections.includes(key) && (
               <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: "auto" }}
-                exit={{ height: 0 }}
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
                 className="overflow-hidden"
               >
-                <div className="pb-3 space-y-2">
+                <div className="pt-1 pb-3 space-y-2">
                   {options.map((opt) => {
                     const active = activeFilters.some((f) => f.type === key && f.value === opt);
                     return (
-                      <label key={opt} className="flex items-center gap-2.5 cursor-pointer group">
+                      <label
+                        key={opt}
+                        className="flex items-center gap-2.5 cursor-pointer group select-none"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          onToggle(key, opt);
+                        }}
+                      >
                         <div
-                          className={`w-4 h-4 border flex items-center justify-center transition-colors ${active ? "bg-brass border-brass" : "border-sand group-hover:border-brass"}`}
-                          onClick={() => onToggle(key, opt)}
+                          className={`w-4 h-4 border flex items-center justify-center transition-colors ${
+                            active
+                              ? "bg-[#8B7355] border-[#8B7355]"
+                              : "border-[#D4CFC5] bg-[#FFFFFF] group-hover:border-[#8B7355]"
+                          }`}
                         >
-                          {active && <X size={10} className="text-ivory" />}
+                          {active && <X size={10} className="text-[#F8F5EF]" />}
                         </div>
-                        <span className="text-sm font-sans text-charcoal group-hover:text-brass transition-colors">{opt}</span>
+                        <span className={`text-xs font-sans transition-colors ${active ? "text-[#8B7355] font-medium" : "text-[#2C2A27] group-hover:text-[#8B7355]"}`}>
+                          {opt}
+                        </span>
                       </label>
                     );
                   })}
@@ -103,7 +128,7 @@ function ProductCard({ product }: { product: Product }) {
   const { format } = useCurrencyStore();
   const wished = isInWishlist(product._id);
   const discount = product.compareAtPrice ? Math.round(((product.compareAtPrice - product.price) / product.compareAtPrice) * 100) : null;
-  const image = product.images?.[0]?.url || "https://images.unsplash.com/photo-1585586723682-b4df7c864aab?w=600&q=80";
+  const image = product.images?.[0]?.url || "/images/copper_drinkware_1787586869011.png";
 
   return (
     <div
@@ -312,23 +337,52 @@ export default function ShopClient({
             <div className="relative">
               <button
                 onClick={() => setSortOpen(!sortOpen)}
-                className="flex items-center gap-2 btn-secondary py-2.5 px-4 text-xs"
+                className="flex items-center gap-2 py-2.5 px-4 text-xs font-sans uppercase tracking-widest font-medium border transition-colors shadow-sm"
+                style={{
+                  backgroundColor: "#FAF7F2",
+                  borderColor: "#D4CFC5",
+                  color: "#2C2A27",
+                }}
               >
-                Sort: {selectedSort} <ChevronDown size={12} className={`transition-transform ${sortOpen ? "rotate-180" : ""}`} />
+                Sort: {selectedSort}{" "}
+                <ChevronDown
+                  size={12}
+                  className={`transition-transform duration-200 ${sortOpen ? "rotate-180" : ""}`}
+                />
               </button>
               <AnimatePresence>
                 {sortOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    className="absolute right-0 top-full mt-1 bg-ivory border border-sand shadow-luxury z-30 min-w-[200px]"
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 top-full mt-1 border shadow-xl z-50 min-w-[210px] py-1"
+                    style={{
+                      backgroundColor: "#FAF7F2",
+                      borderColor: "#D4CFC5",
+                      boxShadow: "0 14px 40px rgba(26,23,20,0.18)",
+                    }}
                   >
                     {SORT_OPTIONS.map((opt) => (
                       <button
                         key={opt.value}
-                        onClick={() => { setSort(opt.value); setSortOpen(false); }}
-                        className={`w-full text-left px-4 py-2.5 text-sm font-sans hover:bg-cream transition-colors ${sort === opt.value ? "text-brass font-medium" : "text-charcoal"}`}
+                        onClick={() => {
+                          setSort(opt.value);
+                          setSortOpen(false);
+                        }}
+                        className="w-full text-left px-4 py-2.5 text-xs font-sans uppercase tracking-wider transition-colors block"
+                        style={{
+                          backgroundColor: sort === opt.value ? "#EDE8DF" : "transparent",
+                          color: sort === opt.value ? "#8B7355" : "#2C2A27",
+                          fontWeight: sort === opt.value ? 600 : 400,
+                        }}
+                        onMouseEnter={(e) => {
+                          if (sort !== opt.value) e.currentTarget.style.backgroundColor = "#EDE8DF";
+                        }}
+                        onMouseLeave={(e) => {
+                          if (sort !== opt.value) e.currentTarget.style.backgroundColor = "transparent";
+                        }}
                       >
                         {opt.label}
                       </button>
@@ -434,7 +488,8 @@ export default function ShopClient({
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.35 }}
-              className="fixed inset-y-0 left-0 w-80 bg-ivory z-[60] overflow-y-auto shadow-luxury-lg"
+              className="fixed inset-y-0 left-0 w-80 z-[60] overflow-y-auto shadow-2xl"
+              style={{ backgroundColor: "#FAF7F2", borderRight: "1px solid #D4CFC5" }}
             >
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">

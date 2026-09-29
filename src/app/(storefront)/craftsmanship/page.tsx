@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Master Craftsmanship — LAITON & CO",
+  title: "Master Craftsmanship — Mello Metallo",
   description: "Learn about our hand-hammering, tinning, and polishing techniques practiced by master Indian coppersmiths.",
 };
 

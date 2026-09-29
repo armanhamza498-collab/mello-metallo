@@ -13,7 +13,7 @@ import ReviewsSection from "@/components/storefront/home/ReviewsSection";
 import NewsletterSection from "@/components/storefront/home/NewsletterSection";
 
 export const metadata: Metadata = {
-  title: "LAITON & CO — Brass & Copper Objects for the Modern Home",
+  title: "Mello Metallo — Brass & Copper Objects for the Modern Home",
   description:
     "Handcrafted brass and copper homeware designed for modern living. Discover drawer knobs, cookware, drinkware, home decor and gift sets.",
 };

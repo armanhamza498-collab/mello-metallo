@@ -26,7 +26,7 @@ export default function AdminJournalPage() {
   const [excerpt, setExcerpt] = useState("");
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [author, setAuthor] = useState("LAITON & CO");
+  const [author, setAuthor] = useState("Mello Metallo");
   const [category, setCategory] = useState("Journal");
   const [status, setStatus] = useState<"draft" | "published">("published");
   const [uploading, setUploading] = useState(false);
@@ -55,7 +55,7 @@ export default function AdminJournalPage() {
     setExcerpt(p?.excerpt || "");
     setContent(p?.content || "");
     setImageUrl(p?.coverImage?.url || "");
-    setAuthor(p?.author || "LAITON & CO");
+    setAuthor(p?.author || "Mello Metallo");
     setCategory(p?.category || "Journal");
     setStatus(p?.status || "published");
     setModalOpen(true);

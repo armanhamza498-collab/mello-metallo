@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
   ),
   title: {
-    default: "LAITON & CO — Brass & Copper Objects for the Modern Home",
-    template: "%s | LAITON & CO",
+    default: "Mello Metallo — Brass & Copper Objects for the Modern Home",
+    template: "%s | Mello Metallo",
   },
   description:
     "Handcrafted brass and copper homeware designed for modern living. Discover our collection of brass hardware, cookware, drinkware, home decor, and gift sets.",
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     "luxury homeware",
     "brass hardware",
   ],
-  authors: [{ name: "LAITON & CO" }],
-  creator: "LAITON & CO",
+  authors: [{ name: "Mello Metallo" }],
+  creator: "Mello Metallo",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: process.env.NEXT_PUBLIC_SITE_URL,
-    siteName: "LAITON & CO",
-    title: "LAITON & CO — Brass & Copper Objects for the Modern Home",
+    siteName: "Mello Metallo",
+    title: "Mello Metallo — Brass & Copper Objects for the Modern Home",
     description:
       "Handcrafted brass and copper homeware designed for modern living.",
     images: [
@@ -54,13 +54,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "LAITON & CO — Brass & Copper Homeware",
+        alt: "Mello Metallo — Brass & Copper Homeware",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LAITON & CO — Brass & Copper Objects for the Modern Home",
+    title: "Mello Metallo — Brass & Copper Objects for the Modern Home",
     description:
       "Handcrafted brass and copper homeware designed for modern living.",
     images: ["/og-image.jpg"],

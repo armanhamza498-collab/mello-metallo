@@ -3,8 +3,8 @@ import AdminLayoutClient from "@/components/admin/layout/AdminLayoutClient";
 
 export const metadata: Metadata = {
   title: {
-    default: "Admin — LAITON & CO",
-    template: "%s | Admin — LAITON & CO",
+    default: "Admin — Mello Metallo",
+    template: "%s | Admin — Mello Metallo",
   },
   robots: { index: false, follow: false },
 };

@@ -83,7 +83,7 @@ const DEFAULT_SECTIONS = [
     isEnabled: true,
     displayOrder: 6,
     content: {
-      heading: "Join the Laiton Circle",
+      heading: "Join the Mello Metallo Circle",
       description: "Be the first to know about new collections, artisan stories, and exclusive offers.",
       ctaText: "Subscribe",
     },

@@ -55,7 +55,7 @@ function LoginForm() {
         className="max-w-md w-full bg-cream p-8 md:p-10 border border-sand shadow-luxury"
       >
         <div className="text-center mb-8">
-          <p className="label-uppercase mb-2">LAITON & CO</p>
+          <p className="label-uppercase mb-2">Mello Metallo</p>
           <h1 className="font-serif text-3xl text-espresso font-light">Welcome Back</h1>
           <p className="text-xs font-sans text-muted mt-2">Sign in to access your orders, wishlist, and profile.</p>
         </div>

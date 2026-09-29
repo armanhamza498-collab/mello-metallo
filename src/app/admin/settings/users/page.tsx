@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Shield, Plus, Trash2 } from "lucide-react";
 
 const SEED_USERS = [
-  { _id: "u1", name: "Super Admin", email: "admin@laitonco.com", role: "superadmin", status: "Active" },
-  { _id: "u2", name: "Store Manager", email: "manager@laitonco.com", role: "admin", status: "Active" },
+  { _id: "u1", name: "Super Admin", email: "admin@mellometallo.com", role: "superadmin", status: "Active" },
+  { _id: "u2", name: "Store Manager", email: "manager@mellometallo.com", role: "admin", status: "Active" },
 ];
 
 export default function AdminUsersSettingsPage() {

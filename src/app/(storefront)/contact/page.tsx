@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Concierge — LAITON & CO",
+  title: "Contact Concierge — Mello Metallo",
   description: "Reach our luxury customer care concierge for custom hardware orders, wholesale, or product inquiries.",
 };
 
@@ -31,7 +31,7 @@ export default function ContactPage() {
             <div className="space-y-4 pt-4 text-sm font-sans">
               <div className="flex items-center gap-3">
                 <Mail className="text-brass flex-shrink-0" size={18} />
-                <span>concierge@laitonco.com</span>
+                <span>concierge@mellometallo.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-brass flex-shrink-0" size={18} />
@@ -39,7 +39,7 @@ export default function ContactPage() {
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="text-brass flex-shrink-0 mt-1" size={18} />
-                <span>LAITON & CO Studio, Pali Hill, Bandra West, Mumbai 400050</span>
+                <span>Mello Metallo Studio, Pali Hill, Bandra West, Mumbai 400050</span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="text-brass flex-shrink-0" size={18} />

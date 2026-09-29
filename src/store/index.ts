@@ -122,16 +122,15 @@ export const useCurrencyStore = create<CurrencyStore>()(
 interface WishlistStore {
   items: string[]; // product ids
   toggleItem: (productId: string) => void;
+  toggleWishlist: (productId: string) => void;
   isInWishlist: (productId: string) => boolean;
   clear: () => void;
 }
 
 export const useWishlistStore = create<WishlistStore>()(
   persist(
-    (set, get) => ({
-      items: [],
-
-      toggleItem: (productId) => {
+    (set, get) => {
+      const toggle = (productId: string) => {
         set((state) => {
           const exists = state.items.includes(productId);
           return {
@@ -140,11 +139,16 @@ export const useWishlistStore = create<WishlistStore>()(
               : [...state.items, productId],
           };
         });
-      },
+      };
 
-      isInWishlist: (productId) => get().items.includes(productId),
-      clear: () => set({ items: [] }),
-    }),
+      return {
+        items: [],
+        toggleItem: toggle,
+        toggleWishlist: toggle,
+        isInWishlist: (productId) => get().items.includes(productId),
+        clear: () => set({ items: [] }),
+      };
+    },
     { name: "laiton-wishlist" }
   )
 );

@@ -11,7 +11,7 @@ const REVIEWS = [
     location: "Mumbai",
     rating: 5,
     title: "Simply the most beautiful kitchen hardware",
-    body: "I replaced all my cabinet handles with Laiton & Co brass pulls. The quality is extraordinary — the weight, the finish, the patina developing after just a few months. These are objects I will have forever.",
+    body: "I replaced all my cabinet handles with Mello Metallo brass pulls. The quality is extraordinary — the weight, the finish, the patina developing after just a few months. These are objects I will have forever.",
     product: "Antique Brass Cabinet Pull",
     date: "August 2025",
     verified: true,

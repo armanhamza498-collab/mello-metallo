@@ -1,4 +1,4 @@
-// ─── LAITON & CO — VERIFIED BRASS & COPPER ASSETS ──────────────
+// ─── MELLO METALLO — VERIFIED BRASS & COPPER ASSETS ──────────────
 
 export const BRAND_IMAGES = {
   // Local High-Res Custom Generated Assets

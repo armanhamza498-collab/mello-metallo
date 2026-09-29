@@ -1,8 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-ivory: #F8F5EF;
+  --color-cream: #EDE8DF;
+  --color-sand: #D4CFC5;
+  --color-charcoal: #2C2A27;
+  --color-espresso: #1A1714;
+  --color-brass: #8B7355;
+  --color-brass-light: #A89070;
+  --color-brass-lighter: #C4AB8A;
+  --color-brass-dark: #6B5640;
+  --color-copper: #8B4513;
+  --color-copper-warm: #A0522D;
+  --color-muted: #9B9590;
+}
+
+.bg-ivory {
+  background-color: #F8F5EF !important;
+}
+
+.bg-cream {
+  background-color: #EDE8DF !important;
+}
+
+.border-sand {
+  border-color: #D4CFC5 !important;
+}
+
+.text-espresso {
+  color: #1A1714 !important;
+}
+
+.text-charcoal {
+  color: #2C2A27 !important;
+}
+
+.text-brass {
+  color: #8B7355 !important;
+}
+
 /* ─────────────────────────────────────────────────────────────
-   CSS CUSTOM PROPERTIES — LAITON & CO DESIGN TOKENS
+   CSS CUSTOM PROPERTIES — MELLO METALLO DESIGN TOKENS
 ───────────────────────────────────────────────────────────── */
 :root {
   /* Brand Colors */

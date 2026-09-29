@@ -101,10 +101,14 @@ export async function POST(req: NextRequest) {
     }
 
     // Direct superadmin fallback check (allows instant demo login)
-    if (email.toLowerCase() === "admin@laitonco.com" && password === "Admin@123456") {
+    if (
+      (email.toLowerCase() === "admin@mellometallo.com" || email.toLowerCase() === "admin@laitonco.com") &&
+      password === "Admin@123456"
+    ) {
+      const adminEmail = email.toLowerCase();
       const token = signAdminToken({
         id: "superadmin_demo_id",
-        email: "admin@laitonco.com",
+        email: adminEmail,
         role: "superadmin",
         name: "Super Admin",
       });
@@ -116,7 +120,7 @@ export async function POST(req: NextRequest) {
         admin: {
           id: "superadmin_demo_id",
           name: "Super Admin",
-          email: "admin@laitonco.com",
+          email: adminEmail,
           role: "superadmin",
         },
       });

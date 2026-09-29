@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { Save } from "lucide-react";
 
 export default function GeneralAdminSettingsPage() {
-  const [storeName, setStoreName] = useState("LAITON & CO");
-  const [supportEmail, setSupportEmail] = useState("concierge@laitonco.com");
+  const [storeName, setStoreName] = useState("Mello Metallo");
+  const [supportEmail, setSupportEmail] = useState("concierge@mellometallo.com");
   const [supportPhone, setSupportPhone] = useState("+91 98765 43210");
   const [address, setAddress] = useState("42 Artisan Quarter, Jaipur, Rajasthan 302001, India");
   const [loading, setLoading] = useState(true);
@@ -16,8 +16,8 @@ export default function GeneralAdminSettingsPage() {
       .then((r) => r.json())
       .then((data) => {
         if (data.settings) {
-          setStoreName(data.settings.storeName || "LAITON & CO");
-          setSupportEmail(data.settings.supportEmail || "concierge@laitonco.com");
+          setStoreName(data.settings.storeName || "Mello Metallo");
+          setSupportEmail(data.settings.supportEmail || "concierge@mellometallo.com");
           setSupportPhone(data.settings.supportPhone || "+91 98765 43210");
           setAddress(data.settings.address || "");
         }

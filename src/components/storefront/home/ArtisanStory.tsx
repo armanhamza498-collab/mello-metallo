@@ -59,7 +59,7 @@ export default function ArtisanStory() {
               <span className="italic text-brass-lighter">Meant to Last.</span>
             </h2>
             <p className="font-sans text-ivory/60 text-base leading-relaxed mb-6">
-              In the workshops of skilled Indian artisans, every LAITON & CO piece begins as raw brass. Through hammering, shaping, and hand-finishing, it becomes something singular.
+              In the workshops of skilled Indian artisans, every Mello Metallo piece begins as raw brass. Through hammering, shaping, and hand-finishing, it becomes something singular.
             </p>
             <p className="font-sans text-ivory/60 text-base leading-relaxed mb-8">
               No two objects are identical. The slight variation in surface, the unique hammer marks — these are not imperfections. They are the evidence of craft.

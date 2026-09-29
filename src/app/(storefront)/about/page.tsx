@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Story — LAITON & CO",
-  description: "The story of LAITON & CO — bridging European luxury homeware design with contemporary Indian brass craftsmanship.",
+  title: "Our Story — Mello Metallo",
+  description: "The story of Mello Metallo — bridging European luxury homeware design with contemporary Indian brass craftsmanship.",
 };
 
 export default function AboutPage() {
@@ -18,7 +18,7 @@ export default function AboutPage() {
             Crafting Objects with <span className="italic text-brass-lighter">Memory.</span>
           </h1>
           <p className="font-sans text-ivory/70 text-lg leading-relaxed">
-            LAITON & CO was founded to celebrate the timeless warmth of brass and copper — bringing century-old Indian metalworking techniques into the quiet luxury of modern European interiors.
+            Mello Metallo was founded to celebrate the timeless warmth of brass and copper — bringing century-old Indian metalworking techniques into the quiet luxury of modern European interiors.
           </p>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function AboutPage() {
             {[
               {
                 title: "Genuine Solid Metal",
-                desc: "We never use cheap plating or hollow casting. Every LAITON & CO object is forged from solid, heavy-gauge brass or pure copper.",
+                desc: "We never use cheap plating or hollow casting. Every Mello Metallo object is forged from solid, heavy-gauge brass or pure copper.",
               },
               {
                 title: "Slow Production",

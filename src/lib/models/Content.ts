@@ -97,7 +97,7 @@ const BlogPostSchema = new Schema<IBlogPost>(
     excerpt: String,
     content: { type: String, default: "" },
     coverImage: { url: String, publicId: String, alt: String },
-    author: { type: String, default: "LAITON & CO" },
+    author: { type: String, default: "Mello Metallo" },
     category: { type: String, default: "Journal" },
     tags: [String],
     seo: { title: String, description: String, ogImage: String },

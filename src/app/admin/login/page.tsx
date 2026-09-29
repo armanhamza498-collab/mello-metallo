@@ -53,7 +53,7 @@ export default function AdminLoginPage() {
             <span className="text-white font-serif text-xl">L</span>
           </div>
           <h1 className="font-serif text-2xl font-light tracking-widest uppercase" style={{ color: "var(--admin-text)" }}>
-            Laiton & Co
+            Mello Metallo
           </h1>
           <p className="text-xs font-sans mt-1" style={{ color: "var(--admin-text-muted)" }}>Admin Panel</p>
         </div>
@@ -80,7 +80,7 @@ export default function AdminLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  placeholder="admin@laitonco.com"
+                  placeholder="admin@mellometallo.com"
                   className="w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm font-sans outline-none transition-colors"
                   style={{
                     backgroundColor: "var(--admin-surface-2)",
@@ -138,13 +138,13 @@ export default function AdminLoginPage() {
 
           <div className="mt-6 pt-4 border-t text-center" style={{ borderColor: "var(--admin-border)" }}>
             <p className="text-[10px] font-sans" style={{ color: "var(--admin-text-muted)" }}>
-              Default: admin@laitonco.com / Admin@123456
+              Default: admin@mellometallo.com / Admin@123456
             </p>
           </div>
         </div>
 
         <p className="text-center text-[10px] font-sans mt-6" style={{ color: "var(--admin-text-muted)" }}>
-          © 2025 LAITON & CO. All rights reserved.
+          © 2026 Mello Metallo. All rights reserved.
         </p>
       </motion.div>
     </div>
